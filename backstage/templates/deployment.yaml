@@ -34,6 +34,8 @@ spec:
               value: {{ .Values.backend.db.host }}
             - name: PGSSLMODE
               value: {{ .Values.backend.db.ssl }}
+            - name: JENKINS_CFT_USERNAME
+              value: {{ .Values.jenkins.cftUsername }}
             - name: APP_CONFIG_app_baseUrl
               value: https://{{ .Values.ingress.host }}
             - name: APP_CONFIG_backend_baseUrl
