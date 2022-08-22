@@ -69,4 +69,5 @@ issuer:
   email: hello@example.com
 jenkins:
   url: http://jenkins.jenkins:8080
-  authHeader: "Basic dummy-token"
+  cftUsername: "some-user"
+  cftApiKey: "not real"
