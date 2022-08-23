@@ -18,6 +18,11 @@ spec:
         component: backend
 
     spec:
+      volumes:
+      - name: github-app
+        secret:
+          secretName: {{ include "backstage.fullname" . }}-github-app
+
       containers:
         - name: {{ .Chart.Name }}
           image: {{ .Values.backend.image }}
@@ -40,6 +45,11 @@ spec:
               value: https://{{ .Values.ingress.host }}
             - name: APP_CONFIG_backend_baseUrl
               value: https://{{ .Values.ingress.host }}
+          volumeMounts:
+          - name: github-app
+            mountPath: "/app/github-app-backstage-hmcts-credentials.yaml"
+            subPath: "github-app-backstage-hmcts-credentials.yaml"
+            readOnly: true
           envFrom:
             - configMapRef:
                 name: {{ include "backstage.fullname" . }}-auth
