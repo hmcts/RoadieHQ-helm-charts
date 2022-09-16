@@ -41,6 +41,8 @@ spec:
               value: {{ .Values.backend.db.ssl }}
             - name: JENKINS_CFT_USERNAME
               value: {{ .Values.jenkins.cftUsername }}
+            - name: JENKINS_CFT_URL
+              value: {{ .Values.jenkins.cftUrl }}
             - name: APP_CONFIG_app_baseUrl
               value: https://{{ .Values.ingress.host }}
             - name: APP_CONFIG_backend_baseUrl

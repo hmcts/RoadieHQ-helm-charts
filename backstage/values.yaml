@@ -68,6 +68,6 @@ auth:
 issuer:
   email: hello@example.com
 jenkins:
-  url: http://jenkins.jenkins:8080
   cftUsername: "some-user"
+  cftUrl: "http://jenkins.jenkins:8080"
   cftApiKey: "not real"
